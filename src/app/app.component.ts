@@ -14,7 +14,7 @@ import { animate, keyframes, style, transition, trigger } from '@angular/animati
 
         ]))]),
       transition('*=>void', [style({transform: 'translateX(0px)'}),
-        animate(100, keyframes([
+        animate(200, keyframes([
           style({transform: 'translateX(0px)'}),
           style({transform: 'translateX(300px)'})
 
@@ -27,18 +27,6 @@ export class AppComponent {
   todoArray = [];
   todo;
 
-  //todoForm: new FormGroup()
-  addTodo(value) {
-    if (value !== '') {
-      this.todoArray.push(value);
-      //console.log(this.todos)
-    } else {
-      alert('Field required **');
-    }
-
-  }
-
-  /*delete item*/
   deleteItem(todo) {
     for (let i = 0; i <= this.todoArray.length; i++) {
       if (todo == this.todoArray[i]) {
@@ -47,13 +35,9 @@ export class AppComponent {
     }
   }
 
-// submit Form
   todoSubmit(value: any) {
-    if (value !== '') {
+    if (value) {
       this.todoArray.push(value.todo);
-      //this.todoForm.reset()
-    } else {
-      alert('Field required **');
     }
 
   }
