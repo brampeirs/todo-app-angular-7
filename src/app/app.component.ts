@@ -36,7 +36,8 @@ export class AppComponent {
   }
 
   todoSubmit(value: any) {
-    if (value) {
+    console.log('value', value);
+    if (value && value !== '') {
       this.todoArray.push(value.todo);
     }
 
